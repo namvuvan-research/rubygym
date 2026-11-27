@@ -15,6 +15,12 @@ Project 12 — Công nghệ phần mềm · Project 2 — An toàn ứng dụng 
 
 RubyGYM là ứng dụng web phục vụ một trung tâm thể hình giả lập, tập trung vào hai mục tiêu học thuật: xây dựng phần mềm theo quy trình có truy vết và triển khai các kiểm soát AppSec trong CI/CD. Repo được giữ ở phạm vi classroom MVP; các chức năng thanh toán, email/SMS và tích hợp thiết bị không nằm trong phạm vi hiện tại.
 
+## English overview
+
+RubyGYM is an academic full-stack application for a simulated fitness center. It demonstrates requirements traceability, role-based workflows, automated tests, threat modeling, and security checks in CI/CD using Semgrep, Trivy, and OWASP ZAP. It is a classroom MVP, not a production deployment or a claim of security certification. Payment, external notifications, and device integration are outside the implemented scope.
+
+The main architecture and setup instructions are documented below. See [security notes](SECURITY.md), the [STRIDE threat model](docs/stride-threat-model.md), and [requirements traceability](docs/requirements-traceability.md) for technical evidence.
+
 ## Course alignment
 
 | Học phần | Trọng tâm | Bằng chứng trong repo |
