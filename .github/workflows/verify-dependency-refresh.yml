@@ -1,0 +1,29 @@
+name: Verify backend dependency refresh
+on:
+  push:
+    branches: [fix/backend-dependency-refresh]
+permissions:
+  contents: read
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Resolve patched dependencies
+        run: |
+          npm update body-parser proxy-addr --package-lock-only --ignore-scripts
+          node -e "const p=require('./package-lock.json').packages; for(const [name,min] of [['body-parser',[2,4,0]],['proxy-addr',[2,0,8]]]) { const v=p['node_modules/'+name]?.version; const a=(v||'0.0.0').split('.').map(Number); if (a[0]<min[0] || (a[0]===min[0] && (a[1]<min[1] || (a[1]===min[1] && a[2]<min[2])))) throw Error(name+' not patched: '+v); console.log(name,v); }"
+          npm ci
+          npm ls body-parser proxy-addr
+      - name: Regression tests
+        run: npm test
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verified-backend-package-lock
+          path: backend/package-lock.json
