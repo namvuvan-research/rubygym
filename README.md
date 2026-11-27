@@ -4,7 +4,7 @@
 
 **Gym customer management and promotion system**
 
-[![Project 2 Security CI](https://github.com/vuvannam-sec/rubygym/actions/workflows/project2-security-ci.yml/badge.svg)](https://github.com/vuvannam-sec/rubygym/actions/workflows/project2-security-ci.yml)
+[![Project 2 Security CI](https://github.com/namvuvan-research/rubygym/actions/workflows/project2-security-ci.yml/badge.svg)](https://github.com/namvuvan-research/rubygym/actions/workflows/project2-security-ci.yml)
 ![React](https://img.shields.io/badge/React-19.2-20232A?logo=react)
 ![Node.js](https://img.shields.io/badge/Node.js-24-339933?logo=nodedotjs&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
@@ -61,7 +61,7 @@ flowchart LR
 Yêu cầu: Docker Engine/Desktop có hỗ trợ Docker Compose.
 
 ```bash
-git clone https://github.com/vuvannam-sec/rubygym.git
+git clone https://github.com/namvuvan-research/rubygym.git
 cd rubygym
 cp .env.example .env
 docker compose up -d --build
